@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/000/625/844/original/geometric-abstract-light-blue-background-for-website-wallpapers-bussines-templates-vector.jpg'); /* Replace URL with your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 32px;
+            color: #333;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Dashboard</h1>
+        <a href="#" class="btn" onclick="showSportsNames()">Sports Names</a>
+        <a href="#" class="btn" onclick="showParticipatedGames()">Participate Games</a>
+        <a href="#" class="btn" onclick="showFeedback()">Feedback</a>
+        <a href="dashboard.html" class="btn">Logout</a>
+
+        <div id="sportsNames" style="display: none;">
+            <h2>All Sports Names</h2>
+            <select id="sportsSelect">
+                <option>Select a sport</option>
+                <option>Cricket</option>
+                <option>Kho-kho</option>
+                <option>Kabbadi</option>
+                <option>Hockey</option>
+                <option>Football</option>
+                <option>Basketball</option>
+                <option>Tennis</option>
+                <option>Wrestling</option>
+                <!-- Add more sports as needed -->
+            </select>
+        </div>
+
+        <div id="participatedGames" style="display: none;">
+            <h2>Participated Games</h2>
+            <select>
+                <option>Football</option>
+                <option>Cricket</option>
+                <!-- Add participated games dynamically here -->
+            </select>
+        </div>
+
+        <div id="feedback" style="display: none;">
+            <h2>Feedback</h2>
+            <textarea id="feedbackText" rows="4" cols="50" placeholder="Enter your feedback here"></textarea>
+            <br>
+            <button class="btn" onclick="submitFeedback()">Submit Feedback</button>
+            <p id="feedbackMessage" style="display: none; color: black;">Feedback submitted successfully! Thank you.</p>
+        </div>
+    </div>
+
+    <script>
+        function showSportsNames() {
+            hideAllSections();
+            document.getElementById("sportsNames").style.display = "block";
+        }
+
+        function showParticipatedGames() {
+            hideAllSections();
+            document.getElementById("participatedGames").style.display = "block";
+            // Fetch and display participated games here
+        }
+
+        function showFeedback() {
+            hideAllSections();
+            document.getElementById("feedback").style.display = "block";
+            // Fetch and display feedback form here
+        }
+
+        function hideAllSections() {
+            document.getElementById("sportsNames").style.display = "none";
+            document.getElementById("participatedGames").style.display = "none";
+            document.getElementById("feedback").style.display = "none";
+        }
+
+        // Add event listener for the select element
+        document.getElementById("sportsSelect").addEventListener("change", function() {
+            window.location.href = "usergames1.html"; // Redirect to usergames1.html for any selected game
+        });
+
+        function submitFeedback() {
+            // Perform feedback submission (can be AJAX request)
+            // For now, just show the success message and redirect
+            document.getElementById("feedbackMessage").style.display = "block";
+            setTimeout(function() {
+                window.location.href = "userdashboard.html"; // Redirect to userdashboard.html after 2 seconds
+            }, 500);
+        }
+    </script>
+</body>
+</html>

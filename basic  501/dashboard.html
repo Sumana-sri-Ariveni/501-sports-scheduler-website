@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Events Website</title>
+    <style>
+        body {
+            font-family: 'Arial Black', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/000/625/844/original/geometric-abstract-light-blue-background-for-website-wallpapers-bussines-templates-vector.jpg'); /* Replace URL with your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #dashboard {
+            background-color:#83c0c1; /* Set background color for the dashboard */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 24px;
+            font-family: 'Arial Black', sans-serif;
+            margin: 10px;
+        }
+        .image1{
+            padding-top : 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Settings</a>
+    </nav>
+    <div class="container">
+        <h1>Welcome to Sports Scheduler Website</h1>
+        <div id="dashboard">
+            <button class="btn" onclick="window.location.href='admin_sigin.html'">Admin</button>
+            <button class="btn" onclick="window.location.href='user.html'">User</button>
+        </div>
+        <div>
+            <img class="image1" src="https://i.pinimg.com/originals/8b/74/c8/8b74c81223959fe064de7602fbca6ff7.jpg"/>
+        </div>
+    </div>
+</body>
+</html>

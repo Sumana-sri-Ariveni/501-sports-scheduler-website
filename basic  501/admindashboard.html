@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial Black', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://tse1.mm.bing.net/th?id=OIP.eXTEdoH2OJ57GqbdwBzQjAHaEo&pid=Api&P=0&h=220'); /* Replace URL with your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 40px 50px;
+            cursor: pointer;
+            font-size: 24px;
+            font-family: 'Arial Black', sans-serif;
+            margin: 10px;
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make it a block element */
+        }
+        select {
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Admin Dashboard</h1>
+        <a href="Games.html" class="btn">Create Event</a>
+        <button class="btn" onclick="showEventDropdown()">All Events</button>
+        <button class="btn" onclick="logout()">Logout</button>
+
+        <div id="eventSelection" style="display: none;">
+            <h2>Select Event</h2>
+            <select id="eventDropdown" onchange="viewEventDetails()">
+                <option value="">Select an event</option>
+                <option value="Football">Football</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Tennis">Tennis</option>
+                <option>Cricket</option>
+                <option>Basket Ball</option>
+                <option>Kabaddi</option>
+                <option>Kho-kho</option>
+                <option>Volley ball</option>
+                <option>Hockey</option>
+
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+    </div>
+
+    <script>
+        function showEventDropdown() {
+            // Show the event selection dropdown
+            var eventSelection = document.getElementById("eventSelection");
+            eventSelection.style.display = "block";
+        }
+
+        function viewEventDetails() {
+            var selectedEvent = document.getElementById("eventDropdown").value;
+            if (selectedEvent) {
+                // Navigate to the page for viewing event details
+                window.location.href = "event_details.html?event=" + selectedEvent;
+            }
+        }
+
+        function logout() {
+            // Terminate the session and redirect to the dashboard page
+            alert("Logging out...");
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <style>
+        body {
+            font-family: 'Arial Black', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/000/625/844/original/geometric-abstract-light-blue-background-for-website-wallpapers-bussines-templates-vector.jpg'); /* Replace URL with your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 20px 40px;
+            cursor: pointer;
+            font-size: 24px;
+            font-family: 'Arial Black', sans-serif;
+            margin: 10px;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            display: none; /* initially hidden */
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Page</h1>
+        <button class="btn" onclick="showSignInForm()">Sign In</button>
+        <button class="btn" onclick="showSignUpForm()">Sign Up</button>
+        
+        <form id="signInForm" action="#" style="display: none;">
+            <h2>Sign In</h2>
+            <input type="text" id="username" placeholder="Username" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <input type="button" value="Sign In" onclick="signIn()">
+         </form>
+        
+        <form id="signUpForm" action="#" style="display: none;">
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Username" required><br>
+            <input type="password" placeholder="Password" required><br>
+            <input type="email" placeholder="Email" required><br>
+            <!-- Other details of user signup form -->
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+
+    <script>
+        function showSignInForm() {
+            var signInForm = document.getElementById("signInForm");
+            var signUpForm = document.getElementById("signUpForm");
+            signInForm.style.display = "block";
+            signUpForm.style.display = "none";
+        }
+
+        function showSignUpForm() {
+            var signInForm = document.getElementById("signInForm");
+            var signUpForm = document.getElementById("signUpForm");
+            signUpForm.style.display = "block";
+            signInForm.style.display = "none";
+        }
+
+        function signIn() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            if (username === "sri" && password === "123") {
+                // Redirect to the user dashboard
+                window.location.href = "userDashboard.html";
+            } else {
+                // Display invalid alert message
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>

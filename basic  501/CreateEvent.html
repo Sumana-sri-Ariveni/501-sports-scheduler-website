@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Session</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/736x/98/23/94/982394489161e30ee15f72b9ce443bb2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 35px;
+            color: black;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #98ABEE;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px; /* Increased font size */
+            font-family: 'Arial', sans-serif; /* Changed font style */
+        }
+        input[type="file"] {
+            margin-top: 10px;
+        }
+        input[type="submit"] {
+            background-color: maroon;
+            color: Whitesmoke;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold; /* Bold font for labels */
+            font-size: 18px; /* Increased font size for labels */
+            font-family: 'Arial', sans-serif; /* Changed font style for labels */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Session</h1>
+        <form id="createForm" action="#" method="post" enctype="multipart/form-data">
+            <label for="sportname">Sport Name:</label>
+            <input type="text" name="sportname" id="sportname" placeholder="Sport Name" required><br>
+
+            <label for="startingdate">Starting Date:</label>
+            <input type="date" name="startingdate" id="startingdate" required><br>
+
+            <label for="endingdate">Ending Date:</label>
+            <input type="date" name="endingdate" id="endingdate" required><br>
+
+            <label for="eventplace">Event Place:</label>
+            <input type="text" name="eventplace" id="eventplace" placeholder="Event Place" required><br>
+
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" placeholder="Description" rows="4" required></textarea><br>
+
+            <input type="submit" value="Create Event">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("createForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            showSuccessAlert(); // Call function to show success alert
+        });
+
+        function showSuccessAlert() {
+            alert("Session created successfully!");
+            // Redirect to admin dashboard after showing the alert
+            window.location.href = "admindashboard.html";
+        }
+    </script>
+</body>
+</html>
